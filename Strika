@@ -31,6 +31,21 @@ Drop.Font = Enum.Font.SourceSans
 Drop.Text = "DROP"
 Drop.TextColor3 = Color3.fromRGB(0, 0, 0)
 Drop.TextSize = 14.000
+Drop.Parent.MouseButton1Click:Connect(function()
+	while true do
+		wait(15)
+		local A_1 = "DropMoney"
+		local A_2 = script.Parent.Parent.Amount.Text
+		local Event = game:GetService("ReplicatedStorage").MainEvent
+		Event:FireServer(A_1, A_2)
+	end
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "AIRSTRIKA'S DROPPER",
+		Text = ("YOU ARE NOW DROPPING "),
+		Duration = 9999,
+	})
+end)
 
 
 MainTitle.Name = "MainTitle"
@@ -61,25 +76,3 @@ title2.TextSize = 14.000
 title2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 title2.TextWrapped = true
 
--- Scripts:
-
-local function OQMN_fake_script() -- Drop.LocalScript 
-	local script = Instance.new('LocalScript', Drop)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		while true do
-			wait(15)
-			local A_1 = "DropMoney"
-			local A_2 = script.Parent.Parent.Amount.Text
-			local Event = game:GetService("ReplicatedStorage").MainEvent
-			Event:FireServer(A_1, A_2)
-		end
-		
-		game.StarterGui:SetCore("SendNotification", {
-			Title = "AIRSTRIKA'S DROPPER",
-			Text = ("YOU ARE NOW DROPPING "),
-			Duration = 9999,
-		})
-	end)
-end
-coroutine.wrap(OQMN_fake_script)()
