@@ -1,78 +1,22 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+-- AIRSTRIKA
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
-local Drop = Instance.new("TextButton")
-local MainTitle = Instance.new("TextLabel")
-local title2 = Instance.new("TextLabel")
 
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0.344391793, 0, 0.357859522, 0)
-Frame.Size = UDim2.new(0, 270, 0, 117)
-Frame.Style = Enum.FrameStyle.RobloxRound
+Frame.Position = UDim2.new(0.430489719, 0, 0.518394649, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
 Frame.Active = true
 Frame.Draggable = true
 
-Drop.Name = "Drop"
-Drop.Parent = Frame
-Drop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Drop.Position = UDim2.new(0.0992142111, 0, 0.607455194, 0)
-Drop.Size = UDim2.new(0, 200, 0, 30)
-Drop.Style = Enum.ButtonStyle.RobloxRoundButton
-Drop.Font = Enum.Font.SourceSans
-Drop.Text = "DROP"
-Drop.TextColor3 = Color3.fromRGB(0, 0, 0)
-Drop.TextSize = 14.000
-Drop.Parent.MouseButton1Click:Connect(function()
-	while true do
-		wait(15)
-		local A_1 = "DropMoney"
-		local A_2 = script.Parent.Parent.Amount.Text
-		local Event = game:GetService("ReplicatedStorage").MainEvent
-		Event:FireServer(A_1, A_2)
-	end
-
-	game.StarterGui:SetCore("SendNotification", {
-		Title = "AIRSTRIKA'S DROPPER",
-		Text = ("YOU ARE NOW DROPPING "),
-		Duration = 9999,
-	})
-end)
-
-
-MainTitle.Name = "MainTitle"
-MainTitle.Parent = Frame
-MainTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainTitle.BackgroundTransparency = 1.000
-MainTitle.Position = UDim2.new(0.111283846, 0, -0.0137701482, 0)
-MainTitle.Size = UDim2.new(0, 200, 0, 36)
-MainTitle.Font = Enum.Font.SourceSans
-MainTitle.Text = "AIRSTRIKAS DROPPER"
-MainTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-MainTitle.TextScaled = true
-MainTitle.TextSize = 14.000
-MainTitle.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-MainTitle.TextWrapped = true
-
-title2.Name = "title2"
-title2.Parent = Frame
-title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-title2.BackgroundTransparency = 1.000
-title2.Position = UDim2.new(0.13267076, 0, 0.256938338, 0)
-title2.Size = UDim2.new(0, 184, 0, 19)
-title2.Font = Enum.Font.SourceSans
-title2.Text = "10K DROPPER"
-title2.TextColor3 = Color3.fromRGB(255, 255, 255)
-title2.TextScaled = true
-title2.TextSize = 14.000
-title2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-title2.TextWrapped = true
-
+game.StarterGui:SetCore("SendNotification", {
+	Title = "YOU ARE BANNED HAHAH",
+	Text = ("GGS GET BANNED HOE "),
+	Duration = 9999,
+})
